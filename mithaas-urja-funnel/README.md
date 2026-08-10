@@ -136,3 +136,4 @@ Notes:
 
 - The reels section is not shown because no reel links were provided.
 - Product content, testimonials, FAQs, pricing, delivery rules, and social links are centralized in `src/data/site.ts` for easy editing.
+Deployment configuration updated.
