@@ -12,9 +12,11 @@ import { OrderPipelineError as SheetsPipelineError } from "@/lib/google-sheets";
 import { OrderPipelineError as EmailPipelineError } from "@/lib/email";
 
 function isAllowedOrigin(origin: string | null) {
-  const allowedOrigins = [process.env.FRONTEND_URL, process.env.NEXT_PUBLIC_SITE_URL].filter(
-    Boolean
-  );
+  const allowedOrigins = [
+    process.env.FRONTEND_URL,
+    process.env.NEXT_PUBLIC_SITE_URL,
+    process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : null,
+  ].filter(Boolean) as string[];
 
   if (!origin || allowedOrigins.length === 0) {
     return true;
